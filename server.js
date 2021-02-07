@@ -1,7 +1,8 @@
 const express = require('express')
 const app = express();
 const path = require('path')
-const http=require('http').createServer(app)
+const http = require('http').createServer(app);
+const port = process.env.PORT || 3000;
 // console.log(__dirname);
 // console.log(path.join(__dirname,'/public'));
 
@@ -14,8 +15,8 @@ app.get("/", (req, res) => {
     res.send("Hello World ")
 });
 
-http.listen(3000, () => {
-    console.log(`listining`);
+http.listen(port, () => {
+    console.log(`listining on ${port}` );
 })
 
 //socket
